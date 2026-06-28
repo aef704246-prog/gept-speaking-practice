@@ -1,0 +1,9 @@
+{
+  "name": "全民英檢初級口說練習",
+  "short_name": "GEPT 口說",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff7e8",
+  "theme_color": "#fff7e8",
+  "lang": "zh-Hant"
+}

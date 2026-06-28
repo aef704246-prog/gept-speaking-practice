@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7e8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="GEPT 口說">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>GEPT 初級口說練習 iPhone 版</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">GEPT Elementary Speaking</p>
+        <h1>全民英檢初級口說練習 iPhone 版</h1>
+        <p class="lead">手機友善介面，可產生題目、播放英文、錄音、回放與自我評分。</p>
+      </div>
+      <div id="statusCard" class="status-card">檢查瀏覽器功能中…</div>
+    </section>
+
+    <section class="panel">
+      <div class="field">
+        <label for="theme">題目主題</label>
+        <select id="theme">
+          <option value="mixed">混合主題</option>
+          <option value="school">學校生活</option>
+          <option value="family">家庭朋友</option>
+          <option value="daily">日常生活</option>
+          <option value="shopping">購物外食</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="voice">英文聲音</label>
+        <select id="voice"></select>
+      </div>
+      <div class="field">
+        <label for="rate">朗讀速度</label>
+        <select id="rate">
+          <option value="0.82">慢速</option>
+          <option value="0.92" selected>自然偏慢</option>
+          <option value="1">正常</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button id="generateBtn">重新出題</button>
+        <button id="testVoiceBtn" class="secondary">試聽英文</button>
+        <button id="clearBtn" class="secondary">清除錄音</button>
+      </div>
+    </section>
+
+    <section class="notice" id="fileNotice" hidden>
+      iPhone 錄音需要 HTTPS 安全網址。請把這個資料夾上傳到 GitHub Pages、Netlify、Vercel 等 HTTPS 網站後，再用 iPhone Safari 開啟。
+    </section>
+
+    <section class="notice install-tip">
+      iPhone 可按 Safari 下方「分享」→「加入主畫面」，像 App 一樣開啟。
+    </section>
+
+    <section id="paper" class="paper"></section>
+
+    <section class="score">
+      <h2>評分區</h2>
+      <div class="score-grid">
+        <label>發音、語調、流暢度
+          <select id="delivery">
+            <option value="">尚未評分</option>
+            <option value="5">5 很清楚自然</option>
+            <option value="4">4 大致清楚</option>
+            <option value="3">3 可理解但不穩</option>
+            <option value="2">2 需要多次重聽</option>
+            <option value="1">1 很難理解</option>
+            <option value="0">0 未作答</option>
+          </select>
+        </label>
+        <label>文法、字彙、切題
+          <select id="language">
+            <option value="">尚未評分</option>
+            <option value="5">5 完整且切題</option>
+            <option value="4">4 大致正確</option>
+            <option value="3">3 有錯但可理解</option>
+            <option value="2">2 內容不足</option>
+            <option value="1">1 幾乎無法表達</option>
+            <option value="0">0 未作答</option>
+          </select>
+        </label>
+      </div>
+      <div id="scoreResult" class="score-result">尚未評分</div>
+      <textarea id="note" placeholder="老師評語或自我檢討…"></textarea>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
