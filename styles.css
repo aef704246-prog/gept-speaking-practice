@@ -172,6 +172,16 @@ button:disabled {
   color: #fff;
   border-color: var(--ink);
 }
+.auto-score-btn {
+  border-color: rgba(33, 135, 90, .35);
+  background: #f0fff8;
+  color: var(--green);
+}
+.auto-score-btn.scoring {
+  background: var(--green);
+  color: #fff;
+  animation: pulse 1s infinite;
+}
 .mini.recording {
   background: var(--accent);
   color: #fff;
@@ -182,6 +192,43 @@ button:disabled {
   grid-column: 2 / 4;
   display: grid;
   gap: 8px;
+}
+.auto-score-result {
+  grid-column: 2 / 4;
+}
+.auto-score-card {
+  display: grid;
+  gap: 5px;
+  margin-top: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.auto-score-card strong { font-size: 16px; }
+.auto-score-card small {
+  color: var(--muted);
+  word-break: break-word;
+}
+.auto-score-card.good {
+  border-color: rgba(33, 135, 90, .35);
+  background: #f0fff8;
+}
+.auto-score-card.ok {
+  border-color: rgba(231, 102, 53, .35);
+  background: #fff8ee;
+}
+.auto-score-card.needs-work {
+  border-color: rgba(185, 64, 64, .35);
+  background: #fff3f3;
+}
+.auto-score-card.listening {
+  border-color: rgba(33, 135, 90, .35);
+  background: #f0fff8;
+  color: var(--green);
+  font-weight: 900;
 }
 .player audio {
   width: min(100%, 520px);
@@ -232,6 +279,21 @@ button:disabled {
   padding: 24px;
 }
 .score h2 { margin: 0 0 16px; }
+.auto-score-summary {
+  margin-bottom: 10px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #eefaf4;
+  color: var(--green);
+  font-size: 18px;
+  font-weight: 900;
+}
+.score-help {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
 .score-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -268,7 +330,7 @@ button:disabled {
   .hero, .panel, .score-grid { grid-template-columns: 1fr; }
   .question { grid-template-columns: 34px 1fr; }
   .tools { grid-column: 2; justify-content: flex-start; }
-  .player, .meter-wrap, .answer { grid-column: 2; }
+  .player, .meter-wrap, .answer, .auto-score-result { grid-column: 2; }
 }
 
 @media (max-width: 560px) {
